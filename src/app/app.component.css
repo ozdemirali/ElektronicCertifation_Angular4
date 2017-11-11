@@ -1,0 +1,13 @@
+.container{
+    border-radius: 6px;
+    background-color: #EEE;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+    text-align: center;
+}
+.horizantal-menu a{
+   display: block;
+}
