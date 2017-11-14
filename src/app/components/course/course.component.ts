@@ -15,7 +15,7 @@ export class CourseComponent implements OnInit {
 
   ngOnInit() {
     this.courseDataService.getCourseData().subscribe((data)=>{
-      console.log(data.result);
+     // console.log(data.result);
       this.course=data.result;
       for(let i=0;i<this.course.length;i++)
         {
