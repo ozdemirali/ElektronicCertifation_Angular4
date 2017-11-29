@@ -17,8 +17,7 @@
     <tr *ngFor="let item of course; let i=index">
       <td>{{i+1}}</td>
       <td>{{item.name}}</td>
-      <td *ngIf="item.status==true">Devam Ediyor</td>
-      <td *ngIf="item.status==false">Bitti</td>
+      <td *ngIf="item.status; else bitti">Devam Ediyor</td>
       <td>{{item.teacher}}</td>
       <td>{{item.qouta}}</td>
       <td>{{item.start_date}}</td>
@@ -28,5 +27,9 @@
       <td><a class="btn btn-default">Edit</a></td>
     </tr>
   </tbody>
-
 </table>
+
+<ng-template #bitti>
+  <td>Bitti</td>
+
+</ng-template>

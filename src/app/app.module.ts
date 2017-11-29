@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule, Component } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 import {RouterModule,Routes} from '@angular/router';
 import{HttpModule} from '@angular/http';
+import {CalendarModule} from 'primeng/primeng';
+
 
 import { AppComponent } from './app.component';
 import { CourseComponent } from './components/course/course.component';
@@ -24,7 +28,10 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    CalendarModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
     HttpModule
   ],
   providers: [CourseDataService],

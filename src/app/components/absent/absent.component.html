@@ -1,3 +1,33 @@
-<p>
-  Devamsızlık Sayfası
-</p>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Devam Eden Kurslar</th>
+        <th colspan="3">Tarih</th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <select class="form-control" [(ngModel)]="courseId">
+          <option 
+            *ngFor="let item of course"
+            [ngValue]="item.id"
+            >
+            {{item.name}}
+          </option>
+        </select>
+      </td>
+      <td colspan="3">
+          <p-calendar [(ngModel)]="value" dateFormat="dd/mm/yy"></p-calendar>
+         <!-- <input type="text" class="form-control" id="absentDate" [(ngModel)]="absent_Date"> -->
+      </td>
+      <td>
+          <a class="btn btn-default">Öğrencileri Bul</a>
+
+      </td>
+
+    </tr>
+  </tbody>
+</table>

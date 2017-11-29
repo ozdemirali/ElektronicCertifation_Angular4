@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseDataService } from './../../services/course-data.service';
 import * as moment from 'moment';
+import {Course} from '../../interfeces/course';
 
 @Component({
   selector: 'app-course',
@@ -27,15 +28,3 @@ export class CourseComponent implements OnInit {
 
 }
 
-interface Course{
-  end_date:string,
-  hour:number,
-  id:number,
-  limit:number,
-  name:string,
-  qouta:string,
-  start_date:string,
-  status:boolean,
-  teacher:string,
-  teacher_id:number,
-}
