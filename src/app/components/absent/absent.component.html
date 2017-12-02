@@ -12,7 +12,7 @@
       <td>
         <select class="form-control" [(ngModel)]="courseId">
           <option 
-            *ngFor="let item of course"
+            *ngFor="let item of courses"
             [ngValue]="item.id"
             >
             {{item.name}}
@@ -20,14 +20,33 @@
         </select>
       </td>
       <td colspan="3">
-          <p-calendar [(ngModel)]="value" dateFormat="dd/mm/yy"></p-calendar>
-         <!-- <input type="text" class="form-control" id="absentDate" [(ngModel)]="absent_Date"> -->
+          <p-calendar [(ngModel)]="absent_date" dateFormat="dd/mm/yy"></p-calendar>
       </td>
       <td>
-          <a class="btn btn-default">Öğrencileri Bul</a>
-
+          <a class="btn btn-default"(click)="findCourseStudents()">Öğrencileri Bul</a>
       </td>
-
     </tr>
   </tbody>
+</table>
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>S.No</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Toplam Devamsızlığı</th>
+        <th>Bugünkü Devamsızlığı</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of courseStudents; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.surname}}</td>
+      <td>{{item.total}}</td>
+      <td><input type="text" class="form-control" [(ngModel)]="item.hour"></td>
+    </tr>
+   <tr>
+     <td colspan="5"><a class="btn btn-default" (click)="saveCourseStudentsHours()">Kaydet</a></td>
+   </tr>
 </table>
