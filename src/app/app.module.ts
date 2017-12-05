@@ -12,19 +12,22 @@ import { CourseComponent } from './components/course/course.component';
 import { AbsentComponent } from './components/absent/absent.component';
 
 import {CourseDataService} from './services/course-data.service';
+import { AddCourseComponent } from './components/add-course/add-course.component';
 
 
 
 const appRoutes:Routes=[
   {path:'',component:CourseComponent},
-  {path:'absent',component:AbsentComponent}
+  {path:'absent',component:AbsentComponent},
+  {path:'addCourse',component:AddCourseComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
-    AbsentComponent
+    AbsentComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,

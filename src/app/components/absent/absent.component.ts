@@ -4,7 +4,6 @@ import {Course} from '../../interfeces/course';
 import {CourseStudent} from '../../interfeces/courseStudent';
 import * as moment from 'moment';
 
-// import {CalendarModule} from 'primeng/primeng';
 import { $ } from 'protractor';
 
 @Component({
@@ -52,10 +51,5 @@ export class AbsentComponent implements OnInit {
     this.courseDataService.postCourseStudentsHours(absentCourseStudentHours).subscribe((data)=>{
       this.findCourseStudents();
     })
-   
-
   }
-
- 
-
 }
