@@ -27,7 +27,7 @@ export class AbsentComponent implements OnInit {
   }
 
   findCourseStudents(){
-    this.courseDataService.getCourseStudents(this.courseId).subscribe((data)=>{
+    this.courseDataService.getCourseStudentsForAbsent(this.courseId).subscribe((data)=>{
         this.courseStudents=data.result;
 
         for(let i in this.courseStudents){

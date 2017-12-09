@@ -26,8 +26,8 @@ export class CourseDataService {
   }
 
   /*Kuslara ait öğrencileri getirir  */
-  getCourseStudents(id:number){
-    return this.http.get(HttpAddress.findCourseStudents.toString()+id)
+  getCourseStudentsForAbsent(id:number){
+    return this.http.get(HttpAddress.courseStudents.toString()+id)
       .map(res=>res.json());
   }
 
@@ -44,9 +44,17 @@ export class CourseDataService {
   }
 
   postCourseStudent(item){
-      console.log(item);
+    return this.http.post(HttpAddress.saveCourseStudent.toString(),item)
+      .map(res=>res.json());
   }
-   
+  
+
+  getCourseStudents(id:number){
+    console.log(id);
+    return this.http.get(HttpAddress.findCourseStudents.toString()+id);
+    
+
+  }
    
 
 
