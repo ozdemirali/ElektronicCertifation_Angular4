@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule, Component } from '@angular/core';
@@ -12,6 +13,8 @@ import { CourseComponent } from './components/course/course.component';
 import { AbsentComponent } from './components/absent/absent.component';
 
 import {CourseDataService} from './services/course-data.service';
+import { TeacherDataService } from './services/teacher-data.service';
+import { StudentDataService } from './services/student-data.service';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 
 
@@ -37,7 +40,7 @@ const appRoutes:Routes=[
     FormsModule,
     HttpModule
   ],
-  providers: [CourseDataService],
+  providers: [CourseDataService,TeacherDataService,StudentDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
