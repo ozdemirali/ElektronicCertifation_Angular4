@@ -51,7 +51,8 @@ export class CourseDataService {
 
   getCourseStudents(id:number){
     console.log(id);
-    return this.http.get(HttpAddress.findCourseStudents.toString()+id);
+    return this.http.get(HttpAddress.findCourseStudents.toString()+id)
+       .map(res=>res.json()) ;
     
 
   }
