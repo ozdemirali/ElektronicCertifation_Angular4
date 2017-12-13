@@ -11,18 +11,23 @@ import {CalendarModule} from 'primeng/primeng';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './components/course/course.component';
 import { AbsentComponent } from './components/absent/absent.component';
+import { AddCourseComponent } from './components/add-course/add-course.component';
+import { DetailCourseComponent } from './components/detail-course/detail-course.component';
 
 import {CourseDataService} from './services/course-data.service';
 import { TeacherDataService } from './services/teacher-data.service';
 import { StudentDataService } from './services/student-data.service';
-import { AddCourseComponent } from './components/add-course/add-course.component';
+
+
+
 
 
 
 const appRoutes:Routes=[
   {path:'',component:CourseComponent},
   {path:'absent',component:AbsentComponent},
-  {path:'addCourse',component:AddCourseComponent}
+  {path:'addCourse',component:AddCourseComponent},
+  {path:'detail/:id',component:DetailCourseComponent}
 ];
 
 @NgModule({
@@ -30,7 +35,8 @@ const appRoutes:Routes=[
     AppComponent,
     CourseComponent,
     AbsentComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    DetailCourseComponent
   ],
   imports: [
     BrowserModule,
