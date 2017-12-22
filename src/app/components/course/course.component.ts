@@ -5,6 +5,8 @@ import * as moment from 'moment';
 import {Course} from '../../interfeces/course';
 import { rootRoute } from '@angular/router/src/router_module';
 
+import {Router} from'@angular/router';
+
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
@@ -18,7 +20,7 @@ export class CourseComponent implements OnInit {
   
   cols:any[];
   
-  constructor(private courseDataService:CourseDataService) { }
+  constructor(private courseDataService:CourseDataService,private router:Router) { }
 
   ngOnInit() {
     this.courseDataService.getCourseData().subscribe((data)=>{
@@ -45,6 +47,10 @@ export class CourseComponent implements OnInit {
 
   handleRowSelect(event) {
      console.log(event.data.id);
+      let path:any;
+      path="detail/"+event.data.id;
+
+     this.router.navigateByUrl(path);
     //event.data = Selected row data
     
 }

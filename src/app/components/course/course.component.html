@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<!-- <table class="table table-striped">
   <thead>
     <tr>
         <th>S.No</th>
@@ -31,7 +31,7 @@
 
 <ng-template #bitti>
   <td>Bitti</td>
-</ng-template>
+</ng-template> -->
 
 <p-dataTable [value]="course" [rows]="10"  [paginator]="true" [rowsPerPageOptions]="[5,10,20]" [sortMode]="multiple" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="handleRowSelect($event)">
     <p-column field="name" header="Adı" sortable="true" [filter]="true" filterPlaceholder="Search"></p-column>
@@ -44,7 +44,7 @@
     <p-column field="hour" header="Saat"></p-column>
     <!-- <p-column field="id" header="id"  [editable]="true" ></p-column> -->
 </p-dataTable>
-<hr>
+<!-- <hr>
 <p-dataTable [value]="course" [rows]="10"  [paginator]="true" [rowsPerPageOptions]="[5,10,20]" [sortMode]="multiple" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="handleRowSelect($event)">
   <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" sortable="true" ></p-column>
-</p-dataTable>
+</p-dataTable> -->
