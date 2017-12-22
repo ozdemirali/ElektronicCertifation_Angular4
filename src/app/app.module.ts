@@ -2,10 +2,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule, Component } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {RouterModule,Routes} from '@angular/router';
 import{HttpModule} from '@angular/http';
-import {CalendarModule} from 'primeng/primeng';
+
+import {CalendarModule,DataTableModule,SharedModule} from 'primeng/primeng';
 
 
 import { AppComponent } from './app.component';
@@ -42,9 +43,12 @@ const appRoutes:Routes=[
     BrowserModule,
     BrowserAnimationsModule,
     CalendarModule,
+    DataTableModule,
+    SharedModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpModule
+    ReactiveFormsModule,
+    HttpModule,
   ],
   providers: [CourseDataService,TeacherDataService,StudentDataService],
   bootstrap: [AppComponent]

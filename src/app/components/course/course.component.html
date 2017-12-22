@@ -31,5 +31,20 @@
 
 <ng-template #bitti>
   <td>Bitti</td>
-
 </ng-template>
+
+<p-dataTable [value]="course" [rows]="10"  [paginator]="true" [rowsPerPageOptions]="[5,10,20]" [sortMode]="multiple" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="handleRowSelect($event)">
+    <p-column field="name" header="Adı" sortable="true" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="status" header="Durumu"></p-column>
+    <p-column field="teacher" header="Eğitmen"></p-column>
+    <p-column field="qouta" header="Kontenjan"></p-column>
+    <p-column field="start_date" header="Başlama Tarihi"></p-column>
+    <p-column field="end_date" header="Bitiş Tarihi"></p-column>
+    <p-column field="limit" header="Devamsızlık Sınırı"></p-column>
+    <p-column field="hour" header="Saat"></p-column>
+    <!-- <p-column field="id" header="id"  [editable]="true" ></p-column> -->
+</p-dataTable>
+<hr>
+<p-dataTable [value]="course" [rows]="10"  [paginator]="true" [rowsPerPageOptions]="[5,10,20]" [sortMode]="multiple" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="handleRowSelect($event)">
+  <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" sortable="true" ></p-column>
+</p-dataTable>
