@@ -33,6 +33,17 @@
   <td>Bitti</td>
 </ng-template> -->
 
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th style="text-align:right">
+          <a routerLink="/addCourse" style="display:inline" class="btn btn-default">+</a>
+        </th>
+    </tr>
+  </thead>
+<br>
+</table>
+
 <p-dataTable [value]="course" [rows]="10"  [paginator]="true" [rowsPerPageOptions]="[5,10,20]" [sortMode]="multiple" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="handleRowSelect($event)">
     <p-column field="name" header="Adı" sortable="true" [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="status" header="Durumu"></p-column>

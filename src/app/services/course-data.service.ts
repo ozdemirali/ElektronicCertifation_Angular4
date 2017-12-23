@@ -41,10 +41,18 @@ export class CourseDataService {
   }  
 
   postNewCourse(item){
+   // console.log(item);
        item.start_date=moment(item.start_date).format('DD/MM/YYYY');
        item.end_date=moment(item.end_date).format('DD/MM/YYYY');
        return this.http.post(HttpAddress.course.toString(),item)
         .map(res=>res.json());
+  }
+  
+  putCourse(item){
+    item.start_date=moment(item.start_date).format('DD/MM/YYYY');
+    item.end_date=moment(item.end_date).format('DD/MM/YYYY');
+    return this.http.put(HttpAddress.course.toString(),item)
+     .map(res=>res.json());
   }
 
   postCourseStudent(item){
