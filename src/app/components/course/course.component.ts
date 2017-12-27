@@ -28,9 +28,15 @@ export class CourseComponent implements OnInit {
       this.course=data.result;
       for(let i=0;i<this.course.length;i++)
         {
+          if(this.course[i].status==false)
+            this.course[i].status="Bitti";
+          else
+            this.course[i].status="Devam Ediyor";  
+
           this.course[i].start_date=moment( this.course[i].start_date).format('DD/MM/YYYY');
           this.course[i].end_date=moment( this.course[i].end_date).format('DD/MM/YYYY');
         }
+        //console.log(this.course);
         
         this.cols=[
           {field:'name',header:'Adı'},
@@ -46,7 +52,7 @@ export class CourseComponent implements OnInit {
   }
 
   handleRowSelect(event) {
-     console.log(event.data.id);
+     //console.log(event.data.id);
       let path:any;
       path="detail/"+event.data.id;
 

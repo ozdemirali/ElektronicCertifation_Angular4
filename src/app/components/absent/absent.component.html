@@ -44,7 +44,7 @@
       <td>{{item.name}}</td>
       <td>{{item.surname}}</td>
       <td>{{item.total}}</td>
-      <td><input type="text" class="form-control" [(ngModel)]="item.hour"></td>
+      <td><input type="number" class="form-control" min=0 max=10  [(ngModel)]="item.hour"></td>
     </tr>
    <tr>
      <td colspan="5"><a class="btn btn-default" (click)="saveCourseStudentsHours()">Kaydet</a></td>

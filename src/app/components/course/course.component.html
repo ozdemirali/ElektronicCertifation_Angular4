@@ -44,8 +44,13 @@
 <br>
 </table>
 
-<p-dataTable [value]="course" [rows]="10"  [paginator]="true" [rowsPerPageOptions]="[5,10,20]" [sortMode]="multiple" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="handleRowSelect($event)">
-    <p-column field="name" header="Adı" sortable="true" [filter]="true" filterPlaceholder="Search"></p-column>
+<div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+  <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+  <input #gb type="text" pInputText size="50" placeholder="Genel Arama">
+</div>
+
+<p-dataTable  [globalFilter]="gb" [value]="course" [rows]="10"  [paginator]="true" [rowsPerPageOptions]="[5,10,20]"  selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="handleRowSelect($event)">
+    <p-column field="name" header="Adı"></p-column>
     <p-column field="status" header="Durumu"></p-column>
     <p-column field="teacher" header="Eğitmen"></p-column>
     <p-column field="qouta" header="Kontenjan"></p-column>
@@ -55,6 +60,9 @@
     <p-column field="hour" header="Saat"></p-column>
     <!-- <p-column field="id" header="id"  [editable]="true" ></p-column> -->
 </p-dataTable>
+
+
+
 <!-- <hr>
 <p-dataTable [value]="course" [rows]="10"  [paginator]="true" [rowsPerPageOptions]="[5,10,20]" [sortMode]="multiple" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="handleRowSelect($event)">
   <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" sortable="true" ></p-column>
