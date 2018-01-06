@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule, Component } from '@angular/core';
@@ -7,6 +6,7 @@ import {RouterModule,Routes} from '@angular/router';
 import{HttpModule} from '@angular/http';
 
 import {CalendarModule,DataTableModule,SharedModule} from 'primeng/primeng';
+
 
 
 import { AppComponent } from './app.component';
@@ -37,7 +37,8 @@ const appRoutes:Routes=[
     CourseComponent,
     AbsentComponent,
     AddCourseComponent,
-    DetailCourseComponent
+    DetailCourseComponent,
+    
   ],
   imports: [
     BrowserModule,

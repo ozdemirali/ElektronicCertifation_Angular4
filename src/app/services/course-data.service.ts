@@ -49,8 +49,12 @@ export class CourseDataService {
   }
   
   putCourse(item){
-    item.start_date=moment(item.start_date).format('DD/MM/YYYY');
-    item.end_date=moment(item.end_date).format('DD/MM/YYYY');
+     if(typeof( item.start_date)=="object"){
+      item.start_date=moment(item.start_date).format('DD/MM/YYYY');
+     } 
+     if(typeof( item.end_date)=="object"){
+      item.end_date=moment(item.end_date).format('DD/MM/YYYY');
+     } 
     return this.http.put(HttpAddress.course.toString(),item)
      .map(res=>res.json());
   }
